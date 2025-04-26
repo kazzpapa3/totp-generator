@@ -7,19 +7,12 @@
 - Base32エンコードされた秘密鍵をクエリパラメータとして受け取る
 - 標準的なTOTPアルゴリズム（RFC 6238）に基づいてコードを生成
 - Lambda Function URLを通じてアクセス可能
-
-## デプロイ済み環境
-
-- **Lambda関数名**: totp-generator
-- **リージョン**: ap-northeast-1
-- **Function URL**: https://ot5hez5jpcbwupqmr2ekutbhpi0eclmw.lambda-url.ap-northeast-1.on.aws/
-
 ## 使用方法
 
 Lambda Function URLにアクセスし、`secret`クエリパラメータにBase32エンコードされた秘密鍵を指定します：
 
 ```
-https://ot5hez5jpcbwupqmr2ekutbhpi0eclmw.lambda-url.ap-northeast-1.on.aws/?secret=JBSWY3DPEHPK3PXP
+https://${your-lambda-function}.lambda-url.ap-northeast-1.on.aws/?secret=JBSWY3DPEHPK3PXP
 ```
 
 レスポンス例：
@@ -73,3 +66,8 @@ aws lambda add-permission \
 - 本番環境では、適切な認証と認可を設定してください
 - 秘密鍵は安全に管理し、ログに記録しないようにしてください
 - 必要に応じてHTTPS通信を強制してください
+
+## 追記
+
+本リポジトリは全て、Amazon Q Developer for CLI によって作成されたものとなります。
+この追記部分以外、全て生成 AI による生成物ですので、適宜リスク判断ください。
